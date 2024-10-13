@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //    switch (variable) {
+    //        case 'A':
+    //            //todo
+    //            break;
+    //        case 'B':
+    //            //todo
+    //            break;
+    //            deffault:
+    //            //todo
+    //            break;
+    //    }
+
+    const lang = 'kr';
+    let msg = null;
+
+    switch (lang) {
+      case 'tw':
+        msg = '小姐接!我好喜歡你!';
+        break;
+      case 'kr':
+        msg = '沙拉黑呦!';
+        break;
+      case 'jp':
+        msg = '愛洗爹路以呦!';
+        break;
+      case 'hk':
+        msg = '我好鐘意黎阿!';
+        break;
+      case 'en':
+        msg = '愛老虎油!';
+        break;
+      default:  //也可以不寫，如果都沒有符合程式會出現null(上面定義過)
+        msg = '比愛心，鳩咪!';
+        break;  //破壞switch，終止這個switch後續工作
+    }
+
+    console.log(msg);
+    console.clear();
+  </script>
+</body>
+
+</html>
