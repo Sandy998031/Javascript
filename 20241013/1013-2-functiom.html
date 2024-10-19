@@ -7,20 +7,22 @@
 </head>
 <body>
     <script>
- //////自訂函式 function，名字為hello，可以傳遞參數(可指定預設值)，他的工作室是印出hello world
+ //////自訂函式 function，名字為hello，可以傳遞參數(可指定預設值)，他的工作是印出hello world
     function hello(name='to you') {
         console.log(`hello world, ${name} !!`);
     }
 
     //hello(); 名為hello的函式，透過()符號執行
-    hello('Loki');
+    hello('Loki');  //hello world,Loki!!
     hello('Joker');
     hello('Van');
     hello();  //如果沒有定義name，自動代入to you
 
     console.clear();
+
+
     //宣告一個變數，這個變數為fn的變數
-    varHello1=function (){   //匿名函式，沒有名字的fn                
+    varHello1=function (name){   //匿名函式，沒有名字的fn                
         console.log(`hello ${name} !!`);
     };
 
@@ -36,7 +38,7 @@
 
     say1=function (name) {
         str='hello ' +name;
-        return str;
+        return str;  //程式直接把答案還給我，F12旁邊沒有顯示行數  //程式遇到return直接結束，下面的console會直接不理他
         console.log('done') 
     }
     ans=say1('Loki');
@@ -45,7 +47,7 @@
     say2=function(name){
         return 'hello '+name;
     }
-    console.log(say2('Loki'));
+    console.log(say2('Loki'));  //say2是say1的簡化代碼，都得到hello Loki
 
     say3=function(name){
         console.log('-------------');

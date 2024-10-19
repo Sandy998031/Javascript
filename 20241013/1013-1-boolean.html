@@ -17,8 +17,11 @@
     console.log(a!=b);  //false
     console.log(a==c);  //false
     console.log(a!=c);  //true,使用否定(!)
-    console.log(c==strNum);  //true，兩個等於教不嚴謹
+
+    console.log(c==strNum);  //true，兩個等於較不嚴謹
     console.log(c===strNum);  //false，三個等於較嚴謹，數字200不等於字串200
+    console.log(c!==strNum);  //true，是進行較嚴謹完全不等於比較
+    console.log(c!=strNum);  //false
 
     console.clear();
 
@@ -33,7 +36,7 @@
     console.clear();
     
     //////複合邏輯，將多個布林值組合起來比較，結果為布林值/////////
-    //&&=and，等號兩邊都要正確才是true(只要一個false，結果就是false)
+    //&&=and，等號兩邊都要正確才是true(只要一個false，結果就是false，程式會由左而右檢驗)
 
     console.log(true&&false&&true);  //false
     console.log(d===e&&c===a&&c>100);  //false
@@ -43,7 +46,8 @@
     console.log(false||false||true);  //true
     console.log(false||false||false);  //false
 
-    // (true||false)&&(false||true);進階版寫法
+    // (true||false)&&(false||true);進階版寫法  //true
+    console.log((true&&true)||(false&&false))||false;  //true
 
 
 

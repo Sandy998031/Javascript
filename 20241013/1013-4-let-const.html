@@ -10,13 +10,16 @@
 <body>
     <script>
       let a=100;  //let用來宣告一個變數，可以變換的數字
-      //經過幾百行，不小心又宣告同名的a變數，let可以保護它不會被重新宣告
-      //let a='A';  //錯誤，不可重新宣告，但可重新指定
+      //經過幾百行，不小心又宣告同名的a變數
+      //let a='A';  //錯誤，let可以保護它不會被重新宣告
+      //a='A';  //OK，不可重新宣告，但可重新指定
+    
 
-    if (true) {   //let在區域作用域底下，可獨立宣告成為{}內變數且獨立使用
-      let a='A';
-      let b='B';
-      console.log(a);  //a='A'
+    if (true) {   //let在區域作用域底下，可獨立宣告成為{}內變數且獨自使用
+      //let a='A';
+      //let b='B';
+      let a='A',b='B';
+      console.log(a,b);  //AB
     }
 
     console.log(a);  //a=100
@@ -26,8 +29,8 @@
   const c=100;  //const用來宣告一個常數，不可變化且常駐的數字。屬於全域常數
   
   if(true){
-    const d='D';  //{}常數不會讀取外面的C
-    console.log(d);
+    const c='C';  //{}常數不會讀取外面的C
+    console.log(c);  //C
   }
 
   console.clear();
@@ -38,7 +41,11 @@
 
 
 
+for(i=1,j=10;i<11;i++,j--){
+console.log(`${i}*${j}`);
+}
 
+console.log();
 
 
 
