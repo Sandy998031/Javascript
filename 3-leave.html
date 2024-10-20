@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //0
+    //1
+    //2
+    //3
+    //5
+    //6
+    for (let i = 0; i < 10; i++) {
+      if (i === 4) continue  //pass，跳過這回合，不再看接下來的todo
+      if (i === 7) break  //破壞這個迴圈，直接結束for
+      console.log(i);
+    }
+
+    console.clear();
+
+    ////return，通常在fn內，控制這個fn返回什麼，fn的工作結束
+    function resay() {
+      console.log('hello');
+      return 'done';
+      console.log('hello');
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

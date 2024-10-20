@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let VipUserName = 'Loki';  //value of str(使用駝峰式大小寫)
+    let VipUserAge = 12;  //val of num
+
+    let myAryAA = new Array();  //正式宣告，透過內建建構式(產生一個大型物件，裡面包含一些可用~~~~~)來完成，一般人偷懶不使用
+    let myAryAB = [];  //空陣列的語法糖果，暴力指定給變數
+    let myAryAC = new Array(1, 2, 'A', true);
+
+    let myAryB = ['A', true, 3];
+    //myAryB.push('str'); //後面加入一個
+    //myAryB.pop();  //後面拉出一個
+    //myAryB.shift();  //前面拉出一個
+    myAryB.unshift(456)  //前面加入一個
+
+
+    //let myAry=[];  //val of array，可以指定n個值，每個值有自己的index(索引)
+    //let myAry=['A',true,3];
+    //myAry[0] //可以透過索引值找到對應的值做更改，0=A.1=true.1=3
+
+    //根據push.pop.shift.unshift來操作陣列增減長度與內容
+
+    //工作上不太使用
+    let aryInit = [1, 2, 3];  //預設值
+    //let errCloneAry=aryInit;  //預設arry因為指定，他們記憶體位置都一樣，這叫記憶體汙染
+
+
+    //工作上使用
+    let realCloneAry = [...aryInit];  //ES6解結構與重新建構，將陣列拆開，重新組合新陣列，再指定給b
+
+    let a = [1, 2, 3];  //被複製的固定陣列
+    let b = [...a];  //重構出一乾淨的陣列，指定給b
+    b.push('A');
+    console.log(b);  //b與是不同的陣列，他們記憶體位置不同F
+
+    let c = [...a, 'Loki', ...b];
+
+
+  </script>
+</body>
+
+</html>

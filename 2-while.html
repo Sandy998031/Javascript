@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>While</title>
+</head>
+
+<body>
+  <script>
+
+    //while，是只有根據條件來決定要不要重複執行，直到條件不成立
+
+    let i = 0;  //初始語句，初始一個值
+    while (i < 10) {  //判定成立
+      console.log('do', i);
+      i++;  //結束語氣，使判定有變化的可能性，才能結束迴圈
+    }
+
+    console.log('done');
+    console.clear();
+
+
+    //while(使用者輸入的值 !==正規表達式指定的密碼規則){
+    //  因情況成立，要求錯誤處理，直道密碼正確才脫離這個錯誤檢查機制
+    //  顯示，密碼格式不正確，請重新輸入
+    //  操作輸入密碼的對話框
+    //}
+
+    ////////////////////
+
+    //do while，相較於while版本，先執行，再判定要不要再做一次
+    let j = 0
+
+    do {
+      console.log(j);
+      j++;
+    } while (j < 5);
+    console.log('done');
+
+
+
+  </script>
+</body>
+
+</html>

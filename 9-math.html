@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    console.log(Math.round(3.4));  //四捨五入
+    console.log(Math.ceil(3.2));  //無條件進位
+    console.log(Math.floor(3.9));  //無條件捨去
+
+    console.clear();
+
+    console.log(Math.random());  //通常不用塞參數，提供一個介於0(包含)~1(不包含)之間的隨機浮點數
+
+    //example 0~9的隨機整數
+    for (let i = 0; i < 10; i++) {
+      //let num=Math.random();  //0.47144421401344716
+      //num*=10;  //4.7144421401344716 //max=9.9999
+      //num=Math.floor(num);  //4  //max=9
+      //console.log(num);
+      console.log(Math.floor(Math.random() * 10));
+    }
+
+    console.clear();
+
+    //example 45~80的隨機整數
+    //(0+45)~(35+45)的隨機整數，之後在加45 
+    //0~35的隨機整數，之後在加45 
+    let rannum = Math.random();  //0~0.9999 
+    rannum *= 36;
+    rannum = Math.floor(rannum)+45;
+    console.log(rannum);
+
+
+    //發明一個fn，名字為(A,B)  =>可指定參數A~B之間的隨機變數
+    //然後塞到一個陣列長度10，裡面都是rand()產出的隨機整數。
+    const rand=(A,B)=>{  //45,80
+    let rand45to80=Math.floor(Math.random()*(B-A+1))+A;
+    return rand45to80;
+    };
+    
+    
+
+
+
+
+    //產生6個數字[不重複]，1~49
+
+
+
+
+  </script>
+</body>
+
+</html>

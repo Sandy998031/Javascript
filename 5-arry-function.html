@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const ary = []
+    for (let i = 0; i < 5; i++) {
+      ary.push(`A${i * 3}`);
+    }
+
+    function showMe(val, idx) {
+      console.log(`index=>${idx},value=>${val}`);
+      //console.log(`index=>${idx}`);
+    }
+
+    ary.forEach(showMe);  //foreach，希望你提供一個fn，他會試著提供參數給你的fn
+
+  </script>
+</body>
+
+</html>

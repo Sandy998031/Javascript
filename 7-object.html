@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //物件object，專拿來存資料，陣列拿來計算整理用的
+    let stdA = {
+      name: 'Loki',
+      age: 18,
+      gender: 'male',
+      alive: true,
+      say: () => console.log('time waits for no one')
+    };
+
+    //stdA.say();  //time waits for no one
+
+    //正規寫法，不會被汙染
+    //const { name, age, gender, alive, say } = stdA;
+    //const stdB = { name, age, gender, alive, say }
+    //上面兩行併成一團
+    const stdB={...stdA};
+
+    stdB.name='jack';
+    stdB.age=25;
+
+    stdA={...stdB};  //
+
+
+  </script>
+</body>
+
+</html>
