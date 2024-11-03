@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//window.setTimeout(todo,time);
+
+const timeTage1=setTimeout(()=>{
+console.log('BOM 1!!');
+},8000);
+
+const timeTage2=setTimeout(()=>{
+console.log('BOM 2!!');
+},8000);
+
+console.log('Done.');
+clearTimeout(timeTage1);
+
+
+    </script>
+</body>
+</html>

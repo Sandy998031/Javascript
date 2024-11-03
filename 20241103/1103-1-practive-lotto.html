@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //exam，產生6個數字{不重複} 1~49
+
+    //method 1----------------------------------------------------------------------
+    let lottoPool=[];  //大球池
+    const getBall=[];  //選中的球
+    for (let i=1; i<50; i++){
+      lottoPool.push(`(${i})`);
+    }  //大球池初始化(1)~(49)
+
+    const rand=(min,max)=>{  //隨機整數的機器
+      return Math.floor(Math.random()*(max-min+1))+min;
+    }
+
+    //共6抽
+    for (let i=1; i<7; i++){
+    const findIdx=rand(0, lottoPool.length-1);  //決定哪個序號，序號換球
+    const findBall=lottoPool[findIdx];  //找到球號ex(10)，複製存為變數
+
+    getBall.push(findBall);  //存入選中區 ex(10)
+
+    //清除球池的指定球ex(10)，利用filter，不要的球回傳false
+    //checkBall為檢查每次的球號，findBall為指定球號
+    lottoPool=lottoPool.filter(function(checkBall){
+      return checkBall !==findBall;
+    });
+  }
+
+    console.log(getBall.sort());
+
+  //method 2-----------------------------------------------------------------------
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>

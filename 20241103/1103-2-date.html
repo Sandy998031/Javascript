@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content=" initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		const time = Date();  //字串
+		const now = new Date();  ////時間物件
+		const lastTime1=new Date(2024,11,31,23,59,59,999);  //月份是從0~12，所以數字11=12月
+		const lastTime2 = new Date('2024-12-31T23:59:59.999');
+
+
+		let ans = null;
+		ans = now.getFullYear() - 1911;  //民國年
+		ans = now.getMonth() + 1;  //月份
+		ans = now.getDate();  //日期
+		ans = now.getHours();
+		ans = now.getMinutes();
+		ans = now.getSeconds();
+		ans = now.getDay();  //星期是從0~6，所以數字0=星期日
+		ans = now.getTime();  //時間戳記，單位是毫秒。將所有的時間換算總毫秒
+
+
+		/////////計算跨年倒數月日時分秒，利用JS兩筆時間物件的getTime相差毫秒，推算月日時分秒///////
+		const lastTime=new Date(now.getFullYear()+1,0)
+		let diffTime = lastTime.getTime() - now.getTime();  //單位總毫秒
+		diffTime = Math.floor(diffTime / 1000);  //單位毫秒
+		//console.log(diffTime+'秒')
+
+		//------------------------------------------------------------------
+		//let sec = 135;
+		//let mm = 0, ss = 0;
+
+		//mm = Math.floor(sec / 60);
+		//ss=sec-60*mm
+		//ss = sec % 60;
+		//console.log(`${mm}分${ss}秒`);
+
+		//-------------------------------------------------------------------
+		//let sec = 4215;
+		//let hh = 0, mm = 0, ss = 0;
+
+		//ss = sec % 60;
+		//mm = Math.floor(sec / 60) % 60;
+		//hh = Math.floor(Math.floor(sec / 60) / 60);
+		//console.log(`${hh}時${mm}分${ss}秒`);
+
+		let sec =diffTime ;
+		let dd = 0, hh = 0, mm = 0, ss = 0;
+
+		ss = sec % 60;
+		mm = Math.floor(sec / 60) % 60;
+		hh = Math.floor(Math.floor(sec / 60) / 60) % 24;
+		dd = Math.floor(Math.floor(Math.floor(sec / 60) / 60) / 24);
+		console.log(`距離2025年，剩下${dd}天${hh}時${mm}分${ss}秒`);
+
+		//---------------------------------
+		const nowTime=new Date();  //程式只會抓一次時間，不會一直變動
+
+		console.log(nowTime);
+		nowTime.setDate(nowTime.getDate()+100);
+		console.log(nowTime);
+		nowTime.setDate(nowTime.getDate()-200);
+		console.log(nowTime);
+
+	</script>
+</body>
+
+</html>
