@@ -23,14 +23,37 @@
 
     console.clear();
 
-    ////return，通常在fn內，控制這個fn返回什麼，fn的工作結束
-    function resay() {
-      console.log('hello');
-      return 'done';
-      console.log('hello');
+    ////return，通常在fn內，控制這個fn返回什麼，當下fn的工作結束
+    //function resay() {
+    //console.log('hello');
+    //return 'done';
+    //console.log('hello');
+    //}
+
+    //const result = resay();  //done
+
+    //如果直接把變數當 boolean 去思考，有東西會是true
+    //反之 0, null, undefined, 空字串都是 false
+    // 布林值前面增加!有相反式的意思，例如 !false => true
+
+    function parrot(str) {
+      if (!str) {  //等價於str === undefined
+        console.log('...鸚鵡看著你甚麼也沒說');
+        return;
+      }
+
+      let j = 4;
+      while (j > 0) {
+        console.log('阿~~~阿~~~~~');
+        if (str === 'mute') return;
+        console.log(`${str}~~~~~~~~~`);
+        j--;
+      }
     }
-
-
+    
+    parrot()  //...鸚鵡看著你甚麼也沒說
+    parrot('hello')  //阿~~~阿~~~~~ hello~~~~~~~~~(4次)
+    parrot('mute')  //阿~~~阿~~~~~
 
 
   </script>

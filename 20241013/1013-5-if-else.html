@@ -17,27 +17,73 @@
       console.log('is false');
     }
 
-    a = 100
+    /////////(原版)//////////
+    b = 99
+    if (b > 200) { console.log('true'); }
+    else {
+      if (b > 100) { console.log('123'); }
+      else { console.log('456'); }
+    }
+
+    console.log('done');
+
+
+
+    /////////(簡化版)/////////
+    a = 99
     if (a > 200) { console.log('超過200'); }
     else if (a > 100) { console.log('超過100'); }
     else { console.log('100以下') }
 
     console.log('done');
 
+
+
+
     /////////////////////////
     const
       height = 190,
       face = true,
-      cash = 50000;
+      cash = 5000;
+
+
+
+    if (height > 180 && face && cash > 10000) {
+      console.log('他是高富帥，100分');
+    } else {
+      console.log('不是高富帥，0~99分');
+    }
+
+
+    if ((height > 180 || face || cash > 10000)) {
+      console.log('高富帥至少有一個成立，60~100分');
+    } else {
+      console.log('高富帥都沒有，59分以下');
+    }
+
 
     //高帥至少一個要有，但一定要有錢，才交往
-    if ((height > 180 || face) && (cash > 10000)) {
+    //if ((height > 180 || face) && (cash > 10000)) {
+    if ((cash > 10000) && ((height > 180) || face)) {  //速度較快，cash<10000直接進入else
       console.log('還滿意，可以試試交往');
     } else {
       console.log('謝謝，我們還是當朋友就好');
     }
 
-    console.clear();
+
+    /*if()內部不一定要放布林值，只要有值就可以當true，要小心使用
+    ex:
+    if(30) console.log('A');  //true
+    if(true) console.log('A');  //true
+    if('AA') console.log('A');  //true
+
+    if(0) console.log('A');  //undefined
+    if(null) console.log('A');  //undefined
+    if(undefined) console.log('A');  //undefined
+*/
+
+
+    // console.clear();
 
 
     //////////////////三元運算子///////////// 
@@ -49,9 +95,10 @@
 
     //console.log(msg);
 
-//三元運算子
-let msg=day>5? '假日':'平日';
-console.log(msg);
+    //三元運算子
+    //let msg = 條件 ? 'true todo' : 'false todo';
+    let msg = day > 5 ? '假日' : '平日';
+    console.log(msg);
 
 
 

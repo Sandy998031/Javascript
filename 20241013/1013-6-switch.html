@@ -21,7 +21,7 @@
     //            break;
     //    }
 
-    const lang = 'kr';
+    const lang = 'kr';  //tw.kr.jp.hk.en....有不同結果喔~~
     let msg = null;
 
     switch (lang) {
@@ -47,6 +47,25 @@
 
     console.log(msg);
     console.clear();
+
+    //(應用)會員編號//
+    const memberState = 'new'; // new or old
+
+    switch (memberState) {
+      case 'new':
+        console.log('歡迎使用者，您是第一次使用，是否需要加入會員？');
+        // console.log('請問你需要什麼服務呢？');
+        // break;
+      case 'old':
+        console.log('請問你需要什麼服務呢？');
+        break;
+    }
+
+
+
+
+
+
   </script>
 </body>
 
