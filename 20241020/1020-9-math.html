@@ -17,7 +17,7 @@
 
     console.log(Math.random());  //通常不用塞參數，提供一個介於0(包含)~1(不包含)之間的隨機浮點數
 
-    //example 0~9的隨機整數
+    //example 0~9的隨機整數，產生10組
     for (let i = 0; i < 10; i++) {
       //let num=Math.random();  //0.47144421401344716
       //num*=10;  //4.7144421401344716 //max=9.9999
@@ -28,25 +28,63 @@
 
     console.clear();
 
-    //example 45~80的隨機整數
-    //(0+45)~(35+45)的隨機整數，之後在加45 
+    //example 產生隨機整數 0 ~ 15  <=>> 0 ~ 0.99999
+    let rand0to15 = Math.floor(Math.random() * 16) + 0;
+
+    //example 45~80的隨機整數，一組
+    //(0+45)~(35+45)的隨機整數，之後再加45 
     //0~35的隨機整數，之後在加45 
-    let rannum = Math.random();  //0~0.9999 
-    rannum *= 36;
-    rannum = Math.floor(rannum)+45;
-    console.log(rannum);
+
+    /////方法1
+    let rannum1 = Math.random();  //0~0.9999 
+    rannum1 *= 36;
+    rannum1 = Math.floor(rannum1) + 45;
+    console.log(rannum1);
 
 
+    /////方法2
+    let rannum2 = Math.floor(Math.random() * 36) + 45;
+    console.log(rannum2);
+  
+
+    //--------------------------------------------------------------------------------------
     //發明一個fn，名字為(A,B)  =>可指定參數A~B之間的隨機變數
     //然後塞到一個陣列長度10，裡面都是rand()產出的隨機整數。
-    const rand=(A,B)=>{  //45,80
-    let rand45to80=Math.floor(Math.random()*(B-A+1))+A;
-    return rand45to80;
+
+    /*思考1
+      const rand = (min, max) => {  //45,80
+      let rand45to80 = Math.floor(Math.random() * 36) + 45;
+      return rand45to80;
+    };
+    */
+
+    //思考2
+      const rand = (min, max) => {  //45,80
+      // 理想狀態下，應防呆一下max跟min要有數字，max要比min大，否則不要繼續
+      // let count = Math.floor(Math.random() * (max - min + 1)) + min;
+      // return count;
+      let rand45to80 = Math.floor(Math.random()*(max - min + 1)) + min;
+      return rand45to80;
     };
     
-    
 
+    // method 1 
+    const arr1 = [];
+    for (let i = 0; i < 10; i++) {
+      arr1.push(rand(45, 80));
+    }
+    console.log(arr1);
 
+    // method 2
+    const arr2 = new Array(10);
+    for (let i = 0; i < arr2.length; i++) {
+      arr2[i] = rand(45, 80);
+    }
+    console.log(arr2);
+
+    // method 3
+    const arr3 = Array.apply(null, new Array(10)).map((i) => rand(45, 80));
+    console.log(arr3);
 
 
     //產生6個數字[不重複]，1~49

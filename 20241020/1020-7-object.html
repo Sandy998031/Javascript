@@ -20,17 +20,41 @@
 
     //stdA.say();  //time waits for no one
 
+    /*
     //正規寫法，不會被汙染
     //const { name, age, gender, alive, say } = stdA;
     //const stdB = { name, age, gender, alive, say }
-    //上面兩行併成一團
-    const stdB={...stdA};
+    const stdB = { ...stdA };  //結構與重構(上面兩行合併寫法))
 
-    stdB.name='jack';
-    stdB.age=25;
+    stdB.name = 'jack';
+    stdB.age = 25;
+    //stdA={name: 'Loki', age: 18, gender: 'male', alive: true, say: ƒ}
+    //stdB={name: 'jack', age: 25, gender: 'male', alive: true, say: ƒ}
 
-    stdA={...stdB};  //
+    stdA={...stdB};  //將變更後stdB重新蓋回stdA
+    //stdA={name: 'jack', age: 25, gender: 'male', alive: true, say: ƒ}
+    */
 
+    const mdy = {
+      name: 'jack',
+      alive: false
+    };
+
+    /////////////方法1////////
+    /*
+    stdA = {
+      ...stdA,
+      name: 'jack',
+      alive: false
+    };  //利用物件屬性後者蓋前者特性
+    //stdA={name: 'jack', age: 18, gender: 'male', alive: false, say: ƒ}
+    */
+
+    //////////////方法2////////////
+    stdA = {
+      ...stdA,
+      ...mdy
+    };
 
   </script>
 </body>

@@ -45,6 +45,22 @@
     let c = [...a, 'Loki', ...b];  //重構時，再塞東西進去
     //[1,2,3,Loki,1,2,3,A]
 
+    /////巢狀Array，二(N)維陣列/////////////////////////////////////////////
+    function hello() {
+      console.log('hello');
+    }
+
+    let MinAry = ['A', 'B', 'C']
+    let BigAry = [hello,MinAry] 
+    //前面的hello網頁顯示為一個function
+    //可以用BigAry[1][1]找到'B'
+
+    //const主要是保護變數有無重新指定
+    //push或其他行為...都是可以被接受的(記憶體未改變)!!!!
+    //但是結構與重構不行，因為他是重構出一乾淨的陣列(記憶體改變)!!!
+    const ary2 = [1, 2, 3];
+    ary2.push('A');  //[1,2,3,'A']
+
 
   </script>
 </body>
