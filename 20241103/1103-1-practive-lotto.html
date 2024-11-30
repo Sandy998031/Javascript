@@ -10,36 +10,72 @@
 <body>
   <script>
     //exam，產生6個數字{不重複} 1~49
+    const rand = (min, max) => {  //隨機整數的機器
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
-    //method 1----------------------------------------------------------------------
-    let lottoPool=[];  //大球池
-    const getBall=[];  //選中的球
-    for (let i=1; i<50; i++){
+
+    //method 1
+    //-----------------------------------------------------------------------------------
+    let lottoPool = [];  //大球池
+    const getBall = [];  //選中的球
+    for (let i = 1; i < 50; i++) {
       lottoPool.push(`(${i})`);
     }  //大球池初始化(1)~(49)
 
-    const rand=(min,max)=>{  //隨機整數的機器
-      return Math.floor(Math.random()*(max-min+1))+min;
-    }
+    //第一抽
+    //const findIdx=rand(0,48);  //決定哪個序號，序號換球
+    //const findBall=lottoPool[findIdx];  //找到球號 EX:(10)，複製存為變數
+
+    //getBall.push(findBall);  //存入選中區 EX:(10)
+
+    //第二抽
+    //const findIdx=rand(0,47);  //決定哪個序號，序號換球(-1大球池球變少)
+    //const findBall=lottoPool[findIdx];  //找到球號 EX:(10)，複製存為變數
+
+    //getBall.push(findBall);  //存入選中區 EX:(10)
 
     //共6抽
-    for (let i=1; i<7; i++){
-    const findIdx=rand(0, lottoPool.length-1);  //決定哪個序號，序號換球
-    const findBall=lottoPool[findIdx];  //找到球號ex(10)，複製存為變數
+    for (let i = 1; i < 7; i++) {
+      //const findIdx = rand(0, lottoPool.length - 1);  //決定哪個序號，序號換球
+      //const findBall = lottoPool[findIdx];  //找到球號ex(10)，複製存為變數
+      const findBall = lottoPool[rand(0, lottoPool.length - 1)];
 
-    getBall.push(findBall);  //存入選中區 ex(10)
+      getBall.push(findBall);  //存入選中區 ex(10)
 
-    //清除球池的指定球ex(10)，利用filter，不要的球回傳false
-    //checkBall為檢查每次的球號，findBall為指定球號
-    lottoPool=lottoPool.filter(function(checkBall){
-      return checkBall !==findBall;
-    });
-  }
+      //清除球池的指定球ex(10)，利用filter，不要的球回傳false
+      //checkBall為檢查每次的球號，findBall為指定球號
+      lottoPool = lottoPool.filter(function (checkBall) {
+        return checkBall !== findBall;
+      });
+    }
 
-    console.log(getBall.sort());
+    console.log(getBall.sort());  //抽中的號碼排序
 
-  //method 2-----------------------------------------------------------------------
+    //method 2
+    //--------------------------------------------------------------------------------------
+    let luckyPool = [];
+    let lottoMachine = new Array(49);
+    for (let i = 0; i < lottoMachine.length; i++)
+      lottoMachine[i] = String(i + 1).padStart(2, '0'); // 大球池初始化
 
+    for (let i = 0; i < 6; i++) {
+      const findIdx = rand(0, lottoMachine.length - 1); // 決定哪個序號，序號換球
+      // resolve 1, just get index 0, because splice always 1 element
+      // const getAry = lottoMachine.splice(findIdx, 1);
+      // luckyPool.push(getAry[0]);
+
+      // resolve 1 preference(偏好寫法)
+      // luckyPool.push(lottoMachine.splice(findIdx, 1)[0]);
+
+      // resolve 2, use array 合併
+      // const getAry = lottoMachine.splice(findIdx, 1);
+      // luckyPool = luckyPool.concat(getAry);
+
+      // resolve 2 preference(偏好寫法)
+      luckyPool = luckyPool.concat(lottoMachine.splice(findIdx, 1));
+    }
+    console.log(luckyPool.sort(), lottoMachine);
 
 
 

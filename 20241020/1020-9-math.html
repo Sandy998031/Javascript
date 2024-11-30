@@ -63,20 +63,19 @@
       // 理想狀態下，應防呆一下max跟min要有數字，max要比min大，否則不要繼續
       // let count = Math.floor(Math.random() * (max - min + 1)) + min;
       // return count;
-      let rand45to80 = Math.floor(Math.random()*(max - min + 1)) + min;
-      return rand45to80;
+      return  rand45to80 = Math.floor(Math.random()*(max - min + 1)) + min;
     };
     
 
     // method 1 
-    const arr1 = [];
+    const arr1 = [];  //宣告一個空陣列
     for (let i = 0; i < 10; i++) {
       arr1.push(rand(45, 80));
     }
     console.log(arr1);
 
     // method 2
-    const arr2 = new Array(10);
+    const arr2 = new Array(10);  //宣告一個長度為10的空陣列
     for (let i = 0; i < arr2.length; i++) {
       arr2[i] = rand(45, 80);
     }
